@@ -35,7 +35,7 @@ The tutorial comprises six parts, including both lectures and practical activiti
 | | Outlook to the Afternoon Sessions |
 | 12:30 - 14:00 | Lunch Break |
 | 14:00 - 15:30 | **Session 3: Quantum Workflows** |
-| | Quantum Workflows (Slides) |
+| | Quantum Workflows ([Slides](https://github.com/UST-QuAntiL/icwe-tutorial/raw/main/resources/Quantum_Workflows.pdf)) |
 | | Service-oriented Quantum Applications (Slides) |
 | | Introduction to Hands-On Session (Slides) |
 | | Hands-On Session Part 1 ([Instructions](https://ust-quantil.github.io/icwe-tutorial/handson.html))|
