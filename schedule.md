@@ -32,7 +32,7 @@ The tutorial comprises six parts, including both lectures and practical activiti
 | | Quantum Software Development Lifecycle ([Slides](https://github.com/UST-QuAntiL/icwe-tutorial/raw/main/resources/Quantum_Software_Development_Lifecycle.pdf)) |
 | | Quantum Hardware Selection (Slides) |
 | | Q/A Session |
-| | Outlook to the Afternoon Sessions |
+| | Outlook to the Afternoon Sessions (Slides) |
 | 12:30 - 14:00 | Lunch Break |
 | 14:00 - 15:30 | **Session 3: Quantum Workflows** |
 | | Quantum Workflows ([Slides](https://github.com/UST-QuAntiL/icwe-tutorial/raw/main/resources/Quantum_Workflows.pdf)) |
