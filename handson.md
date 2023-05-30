@@ -111,7 +111,19 @@ Configure the task to use the ``Expectation Value`` as the objective function an
 
 Afterwards, a second Exclusive Gateway is added to check if the results already converge.
 If this is the case, the subprocess terminates with an End Event.
-To evaluate the condition add the following expression to the sequence flow between the Result Evaluation Task and the End Event as also shown below: 
+To evaluate the condition add the following expression to the sequence flow between the Result Evaluation Task and the End Event as also shown below: ``${ execution.getVariable('converged')!= null && execution.getVariable('converged') == 'true'}``
+
+![Modeler Loop Condition 1](./resources/images/modeler-condition1.png)
+
+If the results do not yet converge, the next iteration is entered by classically optimizing the parameters for the parameterized QAOA circuit.
+This is done by a Parameter Optimization Task using the ``Cobyla`` optimizer.
+All other attributes are optional and left empty for this example.
+
+![Modeler Optimizer](./resources/images/modeler-optimizer.png)
+
+Furthermore, another condition has to be added for the second outgoing sequence flow of the Exclusive Gateway: ``${ execution.getVariable('converged')== null || execution.getVariable('converged') == 'false'}``
+
+![Modeler Loop Condition 2](./resources/images/modeler-condition2.png)
 
 TODO
 
