@@ -133,6 +133,27 @@ Configure the User Task with a form of type ``Generated Task Forms`` and add a f
 
 ![Modeler User Task](./resources/images/modeler-user-task.png)
 
+Next, the quantum workflow can be tested using the Camunda Engine.
+For this, click into the modeling pane (without clicking on a modeling construct) and then mark the process as ``Executable``:
+
+![Modeler Process Executable](./resources/images/modeler-process-executable.png)
+
+Furthermore, the QuantME and QuantME4VAR modeling constructs must be replaced by standard-compliant BPMN modeling constructs.
+Therefore, click on the ``Transform Workflow`` button.
+The resulting native workflow model is displayed below.
+For example, the Warm-Starting Task and Quantum Circuit Loading Task are replaced by two Service Tasks invoking the corresponding services of the Quokka ecosystem based on the configuration attributes.
+Additionally, new Service Tasks are inserted to split the quantum circuit, as well as to combine the results after the execution.
+
+![Modeler Transform Workflow](./resources/images/modeler-transformation.png)
+
+To upload the workflow to the Camunda Engine, click on the ``Deploy Workflow`` button:
+
+![Modeler Deploy Workflow](./resources/images/modeler-deploy-workflow.png)
+
+Open the Camunda Engine using the following URL: ``$GITHUB_USER:8090``
+
+Use ``demo`` as username and password to log in, which displays the following screen:
+
 TODO
 
 ## Part 2: Creating a QuantME Replacement Model
