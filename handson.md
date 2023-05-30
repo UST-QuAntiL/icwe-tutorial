@@ -109,6 +109,10 @@ Configure the task to use the ``Expectation Value`` as the objective function an
 
 ![Modeler Result Evaluation](./resources/images/modeler-result-evaluation.png)
 
+Afterwards, a second Exclusive Gateway is added to check if the results already converge.
+If this is the case, the subprocess terminates with an End Event.
+To evaluate the condition add the following expression to the sequence flow between the Result Evaluation Task and the End Event as also shown below: 
+
 TODO
 
 ## Part 2: Creating a QuantME Replacement Model
