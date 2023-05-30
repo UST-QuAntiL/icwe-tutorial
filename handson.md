@@ -76,7 +76,11 @@ Finally, utilize the ``Goemans– Williamson`` algorithm to calculate the initia
 
 ![Modeler Configure Warm-Start](./resources/images/modeler-warm-start.png)
 
-... TODO
+Next, add a second task of type Quantum Circuit Loading Task to load to parameterized QAOA circuit that is later executed in the variational loop.
+The functionality to generate a corresponding quantum circuit is provided by Quokka, therefore, configure the task using ``quokka/maxcut`` as URL.
+Furthermore, connect both tasks with the start event using sequence flow.
+
+![Modeler Configure Circuit Loading](./resources/images/modeler-circuit-loading.png)
 
 TODO
 
