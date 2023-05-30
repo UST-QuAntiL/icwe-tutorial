@@ -90,6 +90,10 @@ Additionally, restrict the maximum number of cuts, number of resulting sub-circu
 
 ![Modeler Configure Cutting Subprocess](./resources/images/modeler-circuit-cutting.png)
 
+Expand the Circuit Cutting Subprocess to model the optimization loop:
+
+![Modeler Expand Cutting Subprocess](./resources/images/modeler-circuit-cutting-expand.png)
+
 TODO
 
 ## Part 2: Creating a QuantME Replacement Model
