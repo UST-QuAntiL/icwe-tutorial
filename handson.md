@@ -26,7 +26,7 @@ The use case utilizes the Quantum Workflow Modeler and Quokka:
 The code required for the hands-on session is available [here](https://github.com/UST-QuAntiL/QuantME-UseCases/tree/master/2023-icwe).
 
 As the hands-on session requires pushing your implementation from different steps to enable their reuse, start with forking the repository.
-In the following we will refer to the GitHub user to which the fork belongs as ``$GITHUB_USER``.
+In the following, we will refer to the GitHub user to which the fork belongs as ``$GITHUB_USER``.
 
 Afterwards, clone the repository and navigate to the ``2023-icwe`` folder:
 
@@ -34,5 +34,53 @@ Afterwards, clone the repository and navigate to the ``2023-icwe`` folder:
 git clone https://github.com/$GITHUB_USER/QuantME-UseCases.git
 cd 2023-icwe
 ```
+
+All components are available via Docker.
+Therefore, these components can be started using the Docker-Compose file available [here](https://github.com/UST-QuAntiL/QuantME-UseCases/tree/master/2023-icwe/docker):
+
+1. Update the [.env](https://github.com/UST-QuAntiL/QuantME-UseCases/tree/master/2023-icwe/docker/.env) file with your settings: 
+  * ``PUBLIC_HOSTNAME``: Enter the hostname/IP address of your Docker engine. Do *not* use ``localhost``.
+  * ``GITHUB_USER``: The GitHub user to which the fork belongs.
+
+2. Run the Docker-Compose file:
+```
+docker-compose pull
+docker-compose up --build
+```
+3. Wait until all containers are up and running. This may take some minutes.
+
+Open the quantum workflow modeler using the following URL: ``$GITHUB_USER:8080``
+
+Afterwards, the following screen should be displayed:
+
+![Modeler Initial](./resources/images/modeler-initial.png)
+
+Familiarize yourself with the workflow modeler by dragging and dropping elements from the palette on the right into the modelling plain.
+
+## Part 1: QAOA for MaxCut
+
+In the first part of the hands-on session, you will model and execute a quantum workflow orchestrating the [Quantum Approximate Optimization Algorithm (QAOA)](https://arxiv.org/pdf/1411.4028.pdf) to solve the Maximum Cut (MaxCut) problem.
+To model the quantum workflow, the [Quantum Modeling Extension (QuantME)](https://www.iaas.uni-stuttgart.de/publications/Weder2020_QuantumWorkflows.pdf), as well as its extension for Variational Quantum Algorithms (VQAs), called [QuantME4VQA](https://www.iaas.uni-stuttgart.de/publications/Beisel2023_QuantME4VQA.pdf), are used.
+
+First, add a Warm-Starting Task after the initial start event.
+[Warm-starting](https://www.mdpi.com/2079-9292/11/7/1033/pdf) is used to approximate a solution that is incorporated into the quantum circuit to facilitate the search for the optimal solution.
+Select the Task icon in the palette (1), drag it into the plain, click on the wrench symbol (2), and select the QuantME Tasks category in the drop-down menu (3).
+Finally, click on Warm-Starting Task within the QuantME Tasks category.
+
+![Modeler First Task](./resources/images/modeler-select-quantme.png)
+
+TODO: configure
+
+![Modeler Configure Warm-Start](./resources/images/modeler-warm-start.png)
+
+... TODO
+
+TODO
+
+## Part 2: Creating a QuantME Replacement Model
+
+TODO
+
+## Part 3: Modeling and Executing the Hybrid Quantum Application
 
 TODO
