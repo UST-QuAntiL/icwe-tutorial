@@ -70,7 +70,7 @@ Finally, click on Warm-Starting Task within the QuantME Tasks category.
 ![Modeler First Task](./resources/images/modeler-select-quantme.png)
 
 Configure the Warm-Starting Task using the values shown below.
-Thereby, ``Initial State Warm-Start Egger`` is selected as warm-starting method introduced in [this paper](https://quantum-journal.org/papers/q-2021-06-17-479/).
+Thereby, ``Initial State Warm-Start Egger`` is selected as the warm-starting method, which was introduced in [this paper](https://quantum-journal.org/papers/q-2021-06-17-479/).
 Furthermore, we will use QAOA to solve the MaxCut problem, thus, select ``QAOA`` as the quantum algorithm to warm-start.
 Finally, utilize the ``Goemans– Williamson`` algorithm to calculate the initial state to use, as well as ``10`` iterations to use for the approximation.
 
@@ -81,6 +81,14 @@ The functionality to generate a corresponding quantum circuit is provided by Quo
 Furthermore, connect both tasks with the start event using sequence flow.
 
 ![Modeler Configure Circuit Loading](./resources/images/modeler-circuit-loading.png)
+
+Due to today's restricted quantum computers, the quantum circuit should be [cut into multiple smaller sub-circuits](https://arxiv.org/pdf/2302.01792), thus, reducing the impact of errors, as well as the limited number of qubits.
+Add a Circuit Cutting Subprocess, which is also available within the QuantME Tasks category.
+This subprocess must contain the complete optimization loop of the VQA, indicating that the corresponding quantum circuit should be cut before execution and the result should be combined before further processing it.
+Thereby, use ``qiskit`` as cutting method, utilizing the implementation provided by the [Circuit Knitting Toolbox](https://qiskit-extensions.github.io/circuit-knitting-toolbox/).
+Additionally, restrict the maximum number of cuts, number of resulting sub-circuits, and their width as shown below:
+
+![Modeler Configure Cutting Subprocess](./resources/images/modeler-circuit-cutting.png)
 
 TODO
 
