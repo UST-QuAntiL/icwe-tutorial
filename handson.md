@@ -55,16 +55,16 @@ Afterwards, the following screen should be displayed:
 
 ![Modeler Initial](./resources/images/modeler-initial.png)
 
-Familiarize yourself with the workflow modeler by dragging and dropping elements from the palette on the right into the modelling plain.
+Familiarize yourself with the workflow modeler by dragging and dropping elements from the palette on the right into the modeling pane.
 
 ## Part 1: QAOA for MaxCut
 
 In the first part of the hands-on session, you will model and execute a quantum workflow orchestrating the [Quantum Approximate Optimization Algorithm (QAOA)](https://arxiv.org/pdf/1411.4028.pdf) to solve the Maximum Cut (MaxCut) problem.
 To model the quantum workflow, the [Quantum Modeling Extension (QuantME)](https://www.iaas.uni-stuttgart.de/publications/Weder2020_QuantumWorkflows.pdf), as well as its extension for Variational Quantum Algorithms (VQAs), called [QuantME4VQA](https://www.iaas.uni-stuttgart.de/publications/Beisel2023_QuantME4VQA.pdf), are used.
 
-First, add a Warm-Starting Task after the initial start event.
+First, add a Warm-Starting Task after the initial Start Event.
 [Warm-starting](https://www.mdpi.com/2079-9292/11/7/1033/pdf) is used to approximate a solution that is incorporated into the quantum circuit to facilitate the search for the optimal solution.
-Select the Task icon in the palette (1), drag it into the plain, click on the wrench symbol (2), and select the QuantME Tasks category in the drop-down menu (3).
+Select the Task icon in the palette (1), drag it into the pane, click on the wrench symbol (2), and select the QuantME Tasks category in the drop-down menu (3).
 Finally, click on Warm-Starting Task within the QuantME Tasks category.
 
 ![Modeler First Task](./resources/images/modeler-select-quantme.png)
@@ -93,6 +93,14 @@ Additionally, restrict the maximum number of cuts, number of resulting sub-circu
 Expand the Circuit Cutting Subprocess to model the optimization loop:
 
 ![Modeler Expand Cutting Subprocess](./resources/images/modeler-circuit-cutting-expand.png)
+
+First, add a Start Event for the subprocess and afterwards an Exclusive Gateway to later join the sequence flow of the optimization loop.
+The first task within this loop is of type Quantum Circuit Execution Task to execute the loaded quantum circuit on a quantum computer.
+For this example, we configure the task to use ``ibm`` as quantum hardware provider and the ``aer_qasm_simulator`` as QPU.
+The aer_qasm_simulator is a simulator that can be executed locally to avoid queuing times.
+Furthermore, the number of shots, i.e., the number of executions, is set to ``2000``, and it is specified that the circuit to execute was implemented using ``qiskit``.
+
+![Modeler Circuit Execution](./resources/images/modeler-circuit-execution.png)
 
 TODO
 
