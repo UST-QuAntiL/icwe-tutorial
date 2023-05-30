@@ -26,7 +26,7 @@ The tutorial comprises six parts, including both lectures and practical activiti
 
 ## Agenda
 
-| 09:00 - 10:30 | **Session 1: An Introduction to Quantum Computing** |
+| 09:00 - 10:30 | **Session 1: An Introduction to Quantum Computing ([Slides](https://github.com/UST-QuAntiL/icwe-tutorial/raw/main/resources/Introduction_Quantum_Computing.pdf))** |
 | 10:30 - 11:00 | Break |
 | 11:00 - 12:30 | **Session 2: Quantum Software Engineering** |
 | | Quantum Software Development Lifecycle ([Slides](https://github.com/UST-QuAntiL/icwe-tutorial/raw/main/resources/Quantum_Software_Development_Lifecycle.pdf)) |
