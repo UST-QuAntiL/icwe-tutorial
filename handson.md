@@ -102,6 +102,13 @@ Furthermore, the number of shots, i.e., the number of executions, is set to ``20
 
 ![Modeler Circuit Execution](./resources/images/modeler-circuit-execution.png)
 
+Executing a quantum circuit returns a probability distribution of different measured bit strings.
+However, these bit strings must be evaluated to assess the quality of the solution they represent for the given problem.
+For this, QuantME4VAR introduced the Result Evaluation Task.
+Configure the task to use the ``Expectation Value`` as the objective function and ``maxcut`` as the cost function to assess the results.
+
+![Modeler Result Evaluation](./resources/images/modeler-result-evaluation.png)
+
 TODO
 
 ## Part 2: Creating a QuantME Replacement Model
