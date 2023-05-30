@@ -125,6 +125,14 @@ Furthermore, another condition has to be added for the second outgoing sequence 
 
 ![Modeler Loop Condition 2](./resources/images/modeler-condition2.png)
 
+To finalize the subprocess, connect the Parameter Optimization Task with the first Exclusive Gateway using sequence flow.
+
+The Result Evaluation Task generates an image to visualize the identified MaxCut.
+Thus, add a User Task (1) to analyze this image and afterwards terminate the workflow using an End Event.
+Configure the User Task with a form of type ``Generated Task Forms`` and add a form field to display the URL of the result image as shown below:
+
+![Modeler User Task](./resources/images/modeler-user-task.png)
+
 TODO
 
 ## Part 2: Creating a QuantME Replacement Model
