@@ -154,6 +154,16 @@ Open the Camunda Engine using the following URL: ``$GITHUB_USER:8090``
 
 Use ``demo`` as username and password to log in, which displays the following screen:
 
+![Camunda Overview](./resources/images/camunda-overview.png)
+
+Click on ``Cockpit`` to validate that the workflow was successfully uploaded.
+Then, click on ``Processes`` on the top-left and select the workflow from the list.
+This should show a graphical representation of the uploaded workflow:
+
+![Camunda Workflow Overview](./resources/images/camunda-workflow-visualization.png)
+
+To instantiate the workflow ...
+
 TODO
 
 ## Part 2: Creating a QuantME Replacement Model
