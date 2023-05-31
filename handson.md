@@ -162,11 +162,17 @@ This should show a graphical representation of the uploaded workflow:
 
 ![Camunda Workflow Overview](./resources/images/camunda-workflow-visualization.png)
 
-To instantiate the workflow ...
+To instantiate the workflow, click the home button on the top-right, then select ``Tasklist``.
+Next, click on ``Start process`` on the top-right, select the name of the uploaded workflow, and provide the input parameters as shown below.
+...
 
 TODO
 
 ## Part 2: Creating a QuantME Replacement Model
+
+In the second part of the tutorial, we will discuss how to provide the implementation of part 1 as a reusable artifact, which can be integrated into other workflows.
+For this, the concept of [QuantME Replacement Models (QRMs)](https://www.iaas.uni-stuttgart.de/publications/Weder2020_QuantumWorkflows.pdf) is utilized.
+A QRM ... TODO
 
 TODO
 
