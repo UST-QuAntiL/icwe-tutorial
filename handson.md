@@ -138,7 +138,9 @@ For this, click into the modeling pane (without clicking on a modeling construct
 
 ![Modeler Process Executable](./resources/images/modeler-process-executable.png)
 
-Furthermore, the QuantME and QuantME4VAR modeling constructs must be replaced by standard-compliant BPMN modeling constructs.
+Before continuing, store your modeled workflow locally using the ``Save`` button on the top-left.
+
+To execute the workflow, the QuantME and QuantME4VAR modeling constructs must be replaced by standard-compliant BPMN modeling constructs.
 Therefore, click on the ``Transform Workflow`` button.
 The resulting native workflow model is displayed below.
 For example, the Warm-Starting Task and Quantum Circuit Loading Task are replaced by two Service Tasks invoking the corresponding services of the Quokka ecosystem based on the configuration attributes.
@@ -174,7 +176,14 @@ TODO
 
 In the second part of the tutorial, we will discuss how to provide the implementation of part 1 as a reusable artifact, which can be integrated into other workflows.
 For this, the concept of [QuantME Replacement Models (QRMs)](https://www.iaas.uni-stuttgart.de/publications/Weder2020_QuantumWorkflows.pdf) is utilized.
-A QRM ... TODO
+A QRM enables to replace a QuantME task by a reusable workflow fragment implementing its functionality.
+The transformation in part 1 was also based on QRMs, e.g., replacing the Warm-Starting Task and Quantum Circuit Loading Task by corresponding Service Tasks.
+Thereby, a QRM consists of a so-called ``detector``, which is used to identify QuantME tasks that can be replaced, and a ``replacement fragment`` implementing the required functionality.
+
+Next, we will implement a QRM using the previously implemented workflow as replacement fragment.
+To abstractly model a complete variational quantum algorithm as a single task within a workflow, QuantME4VQA provides the Variational Quantum Algorithm Task.
+Thus, Variational Quantum Algorithm Task configured to execute QAOA for MaxCut can be replaced by our previous workflow.
+Start with ... TODO
 
 TODO
 
