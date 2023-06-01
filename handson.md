@@ -180,10 +180,13 @@ A QRM enables to replace a QuantME task by a reusable workflow fragment implemen
 The transformation in part 1 was also based on QRMs, e.g., replacing the Warm-Starting Task and Quantum Circuit Loading Task by corresponding Service Tasks.
 Thereby, a QRM consists of a so-called ``detector``, which is used to identify QuantME tasks that can be replaced, and a ``replacement fragment`` implementing the required functionality.
 
-Next, we will implement a QRM using the previously implemented workflow as replacement fragment.
+Next, we will implement a QRM using the previously implemented workflow as the replacement fragment.
 To abstractly model a complete variational quantum algorithm as a single task within a workflow, QuantME4VQA provides the Variational Quantum Algorithm Task.
 Thus, Variational Quantum Algorithm Task configured to execute QAOA for MaxCut can be replaced by our previous workflow.
-Start with ... TODO
+Start with creating a new diagram to model the detector for the QRM.
+The detector contains exactly one Variational Quantum Algorithm Task, thus, remove the initial Start Event and add the task to the modeling pane:
+
+... TODO
 
 TODO
 
