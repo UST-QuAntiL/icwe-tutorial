@@ -72,7 +72,7 @@ Finally, click on Warm-Starting Task within the QuantME Tasks category.
 Configure the Warm-Starting Task using the values shown below.
 Thereby, ``Initial State Warm-Start Egger`` is selected as the warm-starting method, which was introduced in [this paper](https://quantum-journal.org/papers/q-2021-06-17-479/).
 Furthermore, we will use QAOA to solve the MaxCut problem, thus, select ``QAOA`` as the quantum algorithm to warm-start.
-Finally, utilize the ``Goemans– Williamson`` algorithm to calculate the initial state to use, as well as ``10`` iterations to use for the approximation.
+Finally, utilize the ``Goemans–Williamson`` algorithm to calculate the initial state to use, as well as ``10`` iterations to use for the approximation.
 
 ![Modeler Configure Warm-Start](./resources/images/modeler-warm-start.png)
 
@@ -145,6 +145,8 @@ For example, the Warm-Starting Task and Quantum Circuit Loading Task are replace
 Additionally, new Service Tasks are inserted to split the quantum circuit, as well as to combine the results after the execution.
 
 ![Modeler Transform Workflow](./resources/images/modeler-transformation.png)
+
+In case you experience any problems, the workflow model before transformation is available [here](https://github.com/UST-QuAntiL/QuantME-UseCases/blob/master/2023-icwe/part1/part1-before-transformation.bpmn), which can be opened in the modeler to continue from this point.
 
 To upload the workflow to the Camunda Engine, click on the ``Deploy Workflow`` button:
 
