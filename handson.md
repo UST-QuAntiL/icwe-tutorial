@@ -168,9 +168,23 @@ This should show a graphical representation of the uploaded workflow:
 
 To instantiate the workflow, click the home button on the top-right, then select ``Tasklist``.
 Next, click on ``Start process`` on the top-right, select the name of the uploaded workflow, and provide the input parameters as shown below.
-...
+... TODO: values
+
+![Camunda Workflow Instantiate](./resources/images/camunda-input.png)
 
 TODO
+
+![Camunda Workflow Observation](./resources/images/camunda-observe-instance.png)
+
+Wait until the token reaches the final user task, then, switch to the Tasklist.
+Select the task item on the left (1), then click on ``Claim`` to activate the item (2), and download the result plot using the given URL (3).
+Afterwards, click on ``Complete`` to terminate the workflow instance (4).
+
+![Camunda Workflow Observation](./resources/images/camunda-user-task.png)
+
+Finally, open the downloaded image, visualizing the MaxCut solution for the input graph.
+
+![Max Cut Plot](./resources/images/maxcut-plot.png)
 
 ## Part 2: Creating a QuantME Replacement Model
 
