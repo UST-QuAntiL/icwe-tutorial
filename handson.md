@@ -72,7 +72,7 @@ Finally, click on Warm-Starting Task within the QuantME Tasks category.
 Configure the Warm-Starting Task using the values shown below.
 Thereby, ``Initial State Warm-Start Egger`` is selected as the warm-starting method, which was introduced in [this paper](https://quantum-journal.org/papers/q-2021-06-17-479/).
 Furthermore, we will use QAOA to solve the MaxCut problem, thus, select ``QAOA`` as the quantum algorithm to warm-start.
-Finally, utilize the ``Goemans–Williamson`` algorithm to calculate the initial state to use, as well as ``10`` iterations to use for the approximation.
+Finally, utilize the ``GW`` algorithm to calculate the initial state to use, as well as ``10`` iterations to use for the approximation.
 
 ![Modeler Configure Warm-Start](./resources/images/modeler-warm-start.png)
 
@@ -177,7 +177,10 @@ Next, click on ``Start process`` on the top-right, select the name of the upload
 
 ![Camunda Workflow Instantiate](./resources/images/camunda-input.png)
 
-TODO
+Switch back to the Camunda Cockpit, and select the deployed workflow.
+Then, a running process instance should be shown on the bottom.
+Click on the ID of the instance to visualize the current variables, as well as the position of the token.
+Check the variables to trace the current iteration, as well as costs of the optimization process.
 
 ![Camunda Workflow Observation](./resources/images/camunda-observe-instance.png)
 
