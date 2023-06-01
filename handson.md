@@ -149,6 +149,7 @@ Additionally, new Service Tasks are inserted to split the quantum circuit, as we
 ![Modeler Transform Workflow](./resources/images/modeler-transformation.png)
 
 In case you experience any problems, the workflow model before transformation is available [here](https://github.com/UST-QuAntiL/QuantME-UseCases/blob/master/2023-icwe/part1/part1-before-transformation.bpmn), which can be opened in the modeler to continue from this point.
+Furthermore, the final executable workflow can be accessed [here](https://github.com/UST-QuAntiL/QuantME-UseCases/blob/master/2023-icwe/part1/part1-executable-workflow.bpmn).
 
 To upload the workflow to the Camunda Engine, click on the ``Deploy Workflow`` button:
 
@@ -167,8 +168,12 @@ This should show a graphical representation of the uploaded workflow:
 ![Camunda Workflow Overview](./resources/images/camunda-workflow-visualization.png)
 
 To instantiate the workflow, click the home button on the top-right, then select ``Tasklist``.
-Next, click on ``Start process`` on the top-right, select the name of the uploaded workflow, and provide the input parameters as shown below.
-... TODO: values
+Next, click on ``Start process`` on the top-right, select the name of the uploaded workflow, and provide the input parameters as shown below:
+
+* ``adjMatrix``: ``[[0,2,1],[3,0,1],[1,2,0]]``
+* ``betas``: ``[1]``
+* ``gammas``: ``[1]``
+* ``token``: ``YOUR_IBMQ_TOKEN`` (can be left empty when using the aer simulator (defaul))
 
 ![Camunda Workflow Instantiate](./resources/images/camunda-input.png)
 
