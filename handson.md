@@ -238,11 +238,20 @@ Thus, click on ``QuantME`` on the top-right and afterwards on ``Update QRMs``.
 
 ![Reload QRMs](./resources/images/part2-reload-qrms.png)
 
-... TODO
+Next, transform the workflow as described in part 1 of the tutorial.
+In case the transformation fails, wait for one minute and then reload the QRMs again, as they are fetched via the GitHub API, which takes some time to provide the new files.
+The result of the first transformation step should look as follows:
 
-TODO
+![First Transformation](./resources/images/part2-first-transformation.png)
+
+However, the workflow still contains QuantME modeling constructs, which can not be executed by the Camunda engine.
+Therefore, trigger a second transformation using the ``Transform Workflow`` button.
+This results in the executable workflow model shown below:
+
+![Second Transformation](./resources/images/part2-first-transformation.png)
 
 Test your workflow as described in part 1 of the tutorial.
+Thereby, make sure to set the ``Executable`` flag for the workflow to enable its deployment to the Camunda engine.
 
 ## Part 3: Modeling and Executing the Hybrid Quantum Application
 
