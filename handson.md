@@ -255,4 +255,40 @@ Thereby, make sure to set the ``Executable`` flag for the workflow to enable its
 
 ## Part 3: Modeling and Executing the Hybrid Quantum Application
 
-TODO
+In the third part of the tutorial, we will employ the previously modeled quantum algorithm to automate the route planning for package delivery drivers.
+In addition to the QAOA for MaxCut algorithm modeled in part 1 of this tutorial, we use another QAOA for solving a traveling salesman problem (TSP).
+Moreover, program flow and various classical tasks for processing are required.
+
+The [part3](https://github.com/UST-QuAntiL/QuantME-UseCases/tree/master/2023-icwe/part3) folder of your fork contains a prepared workflow model ``ICWE23_routeplaning.bpmn``, in which the QRM for QAOA for MaxCut from part 2 of this tutorial can be integrated.
+Hence, open this workflow model in your modeler.
+
+![part3-workflowmodel_template.png](resources/images/part3-workflowmodel_template.png)
+
+The start event of the workflow enables the user to submit a list of packages and their destinations, as well as a list of trucks which are available to distribute them.
+
+In the first script task ``Process Orders`, the orders are retrieved from the data source defined by the user and are subsequently processed, such that information about all packages' destination and size is stored in the workflow engine. 
+
+Next, in the ``Check Available Drivers & Trucks`` script task, information about the availability of delivery trucks, such as their capacity, is retrieved from the defined data source and stored in the workflow engine. 
+
+Afterward, a service task is used to dynamically generate a distance matrix of all package delivery destinations on the basis of the Google Maps API.
+
+The next part of the workflow defines the logic for distributing the packages and computing delivery routes.
+As typically, one truck and a single route are insufficient to distribute all packages, routes are computed iteratively in a loop.
+First, the destinations which shall be processed in the current iteration are selected in the ``Select Next (Sub-)Graph` script task. In the first iteration of the loop all destinations are included.
+Next, it is checked if all packages for the currently selected destination fit into one truck. 
+If this is the case, a quantum computation task is used to compute the optimal route for the delivery truck solving a TSP using QAOA. 
+Afterward, the truck driver is dispatched on the computed route, and it is checked, if there are more drivers available and packages that need to be delivered.
+In the case that not all packages fit into one truck, it is checked if there are still multiple truck drivers available and if the set of current destinations includes more than one element and hence, can be further divided.
+If, this is the case, we employ the previously generated QRM to partition the set of current destinations into two sets, which each contain close by destinations. 
+After the quantum computation task, a script task post-processing the quantum algorithm results and storing them in the workflow engine is executed.
+
+
+To complete the described workflow model, the previously generated QRM still needs to be integrated.
+Thus, click on the ``Partition Routes Using MaxCut`` Quantum Computation task and insert the previously defined configuration into the ``Details`` tab.
+
+* ``Algorithm``: ``MaxCut``
+* ``Provider``: ``ibm``
+
+![part3-insertMaxCutQRM.png](resources/images/part3-insertMaxCutQRM.png)
+
+Finally, the complete workflow model can be transformed, deployed, and executed as described in part 1 of this tutorial.
