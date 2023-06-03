@@ -57,7 +57,7 @@ Afterwards, the following screen should be displayed:
 
 Familiarize yourself with the workflow modeler by dragging and dropping elements from the palette on the right into the modeling pane.
 
-If you are not familiar with BPMN, have a look at the [Camunda introcution](https://camunda.com/bpmn/).
+If you are not familiar with BPMN, have a look at the [Camunda introduction](https://camunda.com/bpmn/).
 
 ## Part 1: QAOA for MaxCut
 
@@ -227,6 +227,11 @@ Remove the user task and wrap all modeling construct into a subprocess, resultin
 Store the file locally as ``replacement.bpmn``, and move it to the same folder as the detector.
 Commit the two files to your fork of the use case repository.
 The two files are available [here](https://github.com/UST-QuAntiL/QuantME-UseCases/tree/master/2023-icwe/part2) for your references.
+
+Create a new diagram to test your QRM.
+For this, add a Start Event, a Quantum Computation Task configured the same way as the connector, and an End Event:
+
+![Test Workflow](./resources/images/part2-test-workflow.png)
 
 ... TODO
 
