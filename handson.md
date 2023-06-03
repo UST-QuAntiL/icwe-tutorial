@@ -57,6 +57,8 @@ Afterwards, the following screen should be displayed:
 
 Familiarize yourself with the workflow modeler by dragging and dropping elements from the palette on the right into the modeling pane.
 
+If you are not familiar with BPMN, have a look at the [Camunda introcution](https://camunda.com/bpmn/).
+
 ## Part 1: QAOA for MaxCut
 
 In the first part of the hands-on session, you will model and execute a quantum workflow orchestrating the [Quantum Approximate Optimization Algorithm (QAOA)](https://arxiv.org/pdf/1411.4028.pdf) to solve the Maximum Cut (MaxCut) problem.
@@ -173,7 +175,7 @@ Next, click on ``Start process`` on the top-right, select the name of the upload
 * ``adjMatrix``: ``[[0,2,1],[3,0,1],[1,2,0]]``
 * ``betas``: ``[1]``
 * ``gammas``: ``[1]``
-* ``token``: ``YOUR_IBMQ_TOKEN`` (can be left empty when using the aer simulator (defaul))
+* ``token``: ``YOUR_IBMQ_TOKEN`` (can be left empty when using the aer simulator (default))
 
 ![Camunda Workflow Instantiate](./resources/images/camunda-input.png)
 
@@ -203,14 +205,34 @@ The transformation in part 1 was also based on QRMs, e.g., replacing the Warm-St
 Thereby, a QRM consists of a so-called ``detector``, which is used to identify QuantME tasks that can be replaced, and a ``replacement fragment`` implementing the required functionality.
 
 Next, we will implement a QRM using the previously implemented workflow as the replacement fragment.
-To abstractly model a complete variational quantum algorithm as a single task within a workflow, QuantME4VQA provides the Variational Quantum Algorithm Task.
-Thus, Variational Quantum Algorithm Task configured to execute QAOA for MaxCut can be replaced by our previous workflow.
+To abstractly model a complete quantum algorithm as a single task within a workflow, QuantME provides the Quantum Computation Task.
+Thus, a Quantum Computation Task configured to execute QAOA for MaxCut can be replaced by our previous workflow.
 Start with creating a new diagram to model the detector for the QRM.
-The detector contains exactly one Variational Quantum Algorithm Task, thus, remove the initial Start Event and add the task to the modeling pane:
+The detector contains exactly one Quantum Computation Task, thus, remove the initial Start Event and add the task to the modeling pane:
+
+![Detector Overview](./resources/images/detector-overview.png)
+
+Configure the Quantum Computation Task to specify the attributes of the tasks that can be replaced by this QRM:
+
+* ``Algorithm``: ``MaxCut``
+* ``Provider``: ``ibm``
+
+Store the file locally as ``detector.bpmn``.
+Create a new folder in the [qrm folder](https://github.com/UST-QuAntiL/QuantME-UseCases/tree/master/2023-icwe/qrms) of your fork, called ``vqa-maxcut``, and add the detector to this folder.
+Load the workflow from part 1 into the modeler, which is used as the baseline for the replacement of the QRM.
+Remove the user task and wrap all modeling construct into a subprocess, resulting in the following workflow:
+
+![Replacement Overview](./resources/images/replacement-overview.png)
+
+Store the file locally as ``replacement.bpmn``, and move it to the same folder as the detector.
+Commit the two files to your fork of the use case repository.
+The two files are available [here](https://github.com/UST-QuAntiL/QuantME-UseCases/tree/master/2023-icwe/part2) for your references.
 
 ... TODO
 
 TODO
+
+Test your workflow as described in part 1 of the tutorial.
 
 ## Part 3: Modeling and Executing the Hybrid Quantum Application
 
