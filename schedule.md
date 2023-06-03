@@ -43,6 +43,6 @@ The tutorial comprises six parts, including both lectures and practical activiti
 | 16:00 - 17:30 | **Session 4: Operation of Hybrid Quantum Applications** |
 | | Hands-On Session Part 2 ([Instructions](https://ust-quantil.github.io/icwe-tutorial/handson.html))|
 | | Deployment of Hybrid Quantum Applications ([Slides](https://github.com/UST-QuAntiL/icwe-tutorial/raw/main/resources/slides/Deployment_of_Quantum_Applications.pdf)) |
-| | Wrap-Up (Slides) |
+| | Wrap-Up ([Slides](https://github.com/UST-QuAntiL/icwe-tutorial/raw/main/resources/slides/Wrap_Up.pdf)) |
 
 All times are in CEST (hour in Alicante, Spain).
