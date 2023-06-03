@@ -233,6 +233,11 @@ For this, add a Start Event, a Quantum Computation Task configured the same way 
 
 ![Test Workflow](./resources/images/part2-test-workflow.png)
 
+To enable the transformation of the workflow, the newly created QRM must be loaded into the workflow modeler.
+Thus, click on ``QuantME`` on the top-right and afterwards on ``Update QRMs``.
+
+![Reload QRMs](./resources/images/part2-reload-qrms.png)
+
 ... TODO
 
 TODO
