@@ -271,14 +271,14 @@ In the first script task ``Process Orders``, the orders are retrieved from the d
 
 Next, in the ``Check Available Drivers & Trucks`` script task, information about the availability of delivery trucks, such as their capacity, is retrieved from the defined data source and stored in the workflow engine. 
 
-Afterward, a service task is used to dynamically generate a distance matrix of all package delivery destinations on the basis of the Google Maps API.
+Afterwards, a service task is used to dynamically generate a distance matrix of all package delivery destinations on the basis of the Google Maps API.
 
 The next part of the workflow defines the logic for distributing the packages and computing delivery routes.
 As typically, one truck and a single route are insufficient to distribute all packages, routes are computed iteratively in a loop.
-First, the destinations which shall be processed in the current iteration are selected in the ``Select Next (Sub-)Graph` script task. In the first iteration of the loop, all destinations are included.
+First, the destinations which shall be processed in the current iteration are selected in the ``Select Next (Sub-)Graph`` script task. In the first iteration of the loop, all destinations are included.
 Next, it is checked if all packages for the currently selected destination fit into one truck. 
 If this is the case, a quantum computation task is used to compute the optimal route for the delivery truck solving a TSP using QAOA. 
-Afterward, the truck driver is dispatched on the computed route, and it is checked, if there are more drivers available and packages that need to be delivered.
+Afterwards, the truck driver is dispatched on the computed route, and it is checked, if there are more drivers available and packages that need to be delivered.
 In the case that not all packages fit into one truck, it is checked if there are still multiple truck drivers available and if the set of current destinations includes more than one element and hence, can be further divided.
 If, this is the case, we employ the previously generated QRM to partition the set of current destinations into two sets, which each contain close by destinations. 
 After the quantum computation task, a script task post-processing the quantum algorithm results and storing them in the workflow engine is executed.
