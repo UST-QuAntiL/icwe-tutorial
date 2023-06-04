@@ -249,7 +249,7 @@ However, the workflow still contains QuantME modeling constructs, which can not 
 Therefore, trigger a second transformation using the ``Transform Workflow`` button.
 This results in the executable workflow model shown below:
 
-![Second Transformation](./resources/images/part2-first-transformation.png)
+![Second Transformation](./resources/images/part2-second-transformation.png)
 
 Test your workflow as described in part 1 of the tutorial.
 Thereby, make sure to set the ``Executable`` flag for the workflow to enable its deployment to the Camunda engine.
