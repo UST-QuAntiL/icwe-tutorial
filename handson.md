@@ -265,9 +265,9 @@ Hence, open this workflow model in your modeler.
 
 ![part3-workflowmodel_template.png](resources/images/part3-workflowmodel_template.png)
 
-The start event of the workflow enables the user to submit a list of packages and their destinations, as well as a list of trucks which are available to distribute them.
+The start event of the workflow enables the user to submit a list of packages and their destinations, as well as a list of trucks that are available to distribute them.
 
-In the first script task ``Process Orders`, the orders are retrieved from the data source defined by the user and are subsequently processed, such that information about all packages' destination and size is stored in the workflow engine. 
+In the first script task ``Process Orders``, the orders are retrieved from the data source defined by the user and are subsequently processed, such that information about all packages' destinations and sizes is stored in the workflow engine. 
 
 Next, in the ``Check Available Drivers & Trucks`` script task, information about the availability of delivery trucks, such as their capacity, is retrieved from the defined data source and stored in the workflow engine. 
 
@@ -275,7 +275,7 @@ Afterward, a service task is used to dynamically generate a distance matrix of a
 
 The next part of the workflow defines the logic for distributing the packages and computing delivery routes.
 As typically, one truck and a single route are insufficient to distribute all packages, routes are computed iteratively in a loop.
-First, the destinations which shall be processed in the current iteration are selected in the ``Select Next (Sub-)Graph` script task. In the first iteration of the loop all destinations are included.
+First, the destinations which shall be processed in the current iteration are selected in the ``Select Next (Sub-)Graph` script task. In the first iteration of the loop, all destinations are included.
 Next, it is checked if all packages for the currently selected destination fit into one truck. 
 If this is the case, a quantum computation task is used to compute the optimal route for the delivery truck solving a TSP using QAOA. 
 Afterward, the truck driver is dispatched on the computed route, and it is checked, if there are more drivers available and packages that need to be delivered.
