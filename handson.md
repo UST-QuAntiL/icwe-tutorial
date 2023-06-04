@@ -298,6 +298,11 @@ Thus, click on the ``Partition Routes Using MaxCut`` Quantum Computation Task an
 ![part3-insertMaxCutQRM.png](resources/images/part3-insertMaxCutQRM.png)
 
 Finally, the complete workflow model can be transformed, deployed, and executed as described in part 1 of this tutorial.
+For the required input parameters for the workflow execution corresponding default values are already inserted and can be overwritten when creating the workflow instance via the Camunda Tasklist.
+The Quokka circuit cutting service uses the [IBM circuit knitting toolbox](https://github.com/Qiskit-Extensions/circuit-knitting-toolbox), requires a token to successfully cut larger quantum circuits.
+This token can be retrieved free of charge using an academic account.
+If you do not want to retrieve a token, a smaller problem instance can be solved, which is available [here](https://github.com/UST-QuAntiL/QuantME-UseCases/blob/master/2023-icwe/data/packages_small.txt).
+Thus, adapt the input parameter to us ``packages_small.txt`` instead of ``packages.txt``.
 
 To shut down all Docker containers started throughout this tutorial, execute the following command in the docker folder of your forked repository:
 ```
