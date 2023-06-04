@@ -158,8 +158,7 @@ To upload the workflow to the Camunda Engine, click on the ``Deploy Workflow`` b
 
 ![Modeler Deploy Workflow](./resources/images/modeler-deploy-workflow.png)
 
-Open the Camunda Engine using the following URL: ``$GITHUB_USER:8090``
-
+Open the Camunda Engine using the following URL: [localhost:8090](http://localhost:8090)
 Use ``demo`` as username and password to log in, which displays the following screen:
 
 ![Camunda Overview](./resources/images/camunda-overview.png)
