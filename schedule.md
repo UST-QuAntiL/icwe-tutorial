@@ -37,7 +37,7 @@ The tutorial comprises six parts, including both lectures and practical activiti
 | 14:00 - 15:30 | **Session 3: Quantum Workflows** |
 | | Quantum Workflows ([Slides](https://github.com/UST-QuAntiL/icwe-tutorial/raw/main/resources/slides/Quantum_Workflows.pdf)) |
 | | Service-oriented Quantum Applications ([Slides](https://github.com/UST-QuAntiL/icwe-tutorial/raw/main/resources/slides/Quantum_Service_Compositions.pdf)) |
-| | Introduction to Hands-On Session (Slides) |
+| | Introduction to Hands-On Session ([Slides](https://github.com/UST-QuAntiL/icwe-tutorial/raw/main/resources/slides/Use_Case.pdf)) |
 | | Hands-On Session Part 1 ([Instructions](https://ust-quantil.github.io/icwe-tutorial/handson.html))|
 | 15:30 - 16:00 | Break |
 | 16:00 - 17:30 | **Session 4: Operation of Hybrid Quantum Applications** |
