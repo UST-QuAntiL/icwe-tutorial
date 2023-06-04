@@ -25,14 +25,14 @@ The use case utilizes the Quantum Workflow Modeler and Quokka:
 
 The code required for the hands-on session is available [here](https://github.com/UST-QuAntiL/QuantME-UseCases/tree/master/2023-icwe).
 
-As the hands-on session requires pushing your implementation from different steps to enable their reuse, start with forking the repository.
+As the hands-on session requires pushing your implementation from different steps to enable their reuse, start with **forking** the repository.
 In the following, we will refer to the GitHub user to which the fork belongs as ``$GITHUB_USER``.
 
 Afterwards, clone the repository and navigate to the ``2023-icwe`` folder:
 
 ```
 git clone https://github.com/$GITHUB_USER/QuantME-UseCases.git
-cd 2023-icwe
+cd QuantME-UseCases/2023-icwe
 ```
 
 All components are available via Docker.
@@ -44,12 +44,13 @@ Therefore, these components can be started using the Docker-Compose file availab
 
 2. Run the Docker-Compose file:
 ```
+cd docker
 docker-compose pull
 docker-compose up --build
 ```
 3. Wait until all containers are up and running. This may take some minutes.
 
-Open the quantum workflow modeler using the following URL: ``$GITHUB_USER:8080``
+Open the quantum workflow modeler using the following URL: [localhost:8080](http://localhost:8080)
 
 Afterwards, the following screen should be displayed:
 
