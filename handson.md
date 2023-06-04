@@ -28,8 +28,8 @@ The code required for the hands-on session is available [here](https://github.co
 As the hands-on session requires pushing your implementation from different steps to enable their reuse, start with **forking** the repository.
 In the following, we will refer to the GitHub user to which the fork belongs as ``$GITHUB_USER``.
 
-On Windows, you have to activate long paths to enable cloning and pushing to this repository.
-Thus, execute:
+On Windows, you have to activate long paths for Git to enable cloning and pushing to this repository.
+Thus, execute the following command:
 
 ```
 git config --system core.longpaths true
